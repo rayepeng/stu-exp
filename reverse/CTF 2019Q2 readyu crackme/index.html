@@ -1,0 +1,1574 @@
+
+
+
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="ja">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
+    
+    
+      
+        <title>CTF 2019Q2 readyu crackme 出题思路 - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.0284f74d.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.01803549.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans:300,400,400i,700|Source+Code+Pro&display=fallback">
+        <style>body,input{font-family:"Noto Sans","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Source Code Pro","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="white" data-md-color-accent="red">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#ctf-2019q2-readyu-crackme" tabindex="1" class="md-skip">
+        跳转至
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="My Docs" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon">school</i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              My Docs
+            </span>
+            <span class="md-header-nav__topic">
+              
+                CTF 2019Q2 readyu crackme 出题思路
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." title="prontosil的学习小站" class="md-tabs__link">
+        prontosil的学习小站
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Angular/ng0/" title="Angular" class="md-tabs__link">
+          Angular
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Crypto/cry0/" title="Crypto" class="md-tabs__link">
+          Crypto
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../IOT/Synology router/" title="IOT" class="md-tabs__link">
+          IOT
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Linux/" title="Linux" class="md-tabs__link">
+          Linux
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../database/数据库基本概念/" title="Database" class="md-tabs__link">
+          Database
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../git/" title="Git" class="md-tabs__link">
+          Git
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../javascript/js廖雪峰阅读笔记1/" title="Javascript" class="md-tabs__link">
+          Javascript
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../leetcode/4-公共前缀/" title="Leetcode" class="md-tabs__link">
+          Leetcode
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../matlab&steg/ch0/" title="Matlab&steg" class="md-tabs__link">
+          Matlab&steg
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../network/ip地址/" title="Network" class="md-tabs__link">
+          Network
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../node/" title="Node" class="md-tabs__link">
+          Node
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../opencv/opencv基本操作/" title="Opencv" class="md-tabs__link">
+          Opencv
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../php/" title="Php" class="md-tabs__link">
+          Php
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="./" title="Reverse" class="md-tabs__link md-tabs__link--active">
+          Reverse
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="My Docs" class="md-nav__button md-logo">
+      
+        <i class="md-icon">school</i>
+      
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="prontosil的学习小站" class="md-nav__link">
+      prontosil的学习小站
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Angular
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Angular
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Angular/ng0/" title="ng起步" class="md-nav__link">
+      ng起步
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Angular/ng1/" title="ng官方文档入门手册" class="md-nav__link">
+      ng官方文档入门手册
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Crypto
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Crypto
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Crypto/cry0/" title="公开密钥密码学" class="md-nav__link">
+      公开密钥密码学
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Crypto/cry1/" title="Cry1" class="md-nav__link">
+      Cry1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Crypto/cry2/" title="RSA算法" class="md-nav__link">
+      RSA算法
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Crypto/cry3/" title="The one time pad" class="md-nav__link">
+      The one time pad
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      IOT
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        IOT
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../IOT/Synology router/" title="Synology router 路由器系列" class="md-nav__link">
+      Synology router 路由器系列
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Linux
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Linux
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Linux/" title="Index" class="md-nav__link">
+      Index
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Linux/Linuxshell编程/" title="Linuxshell编程" class="md-nav__link">
+      Linuxshell编程
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Linux/Linux磁盘管理/" title="Linux磁盘管理" class="md-nav__link">
+      Linux磁盘管理
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Linux/WSL远程调试/" title="WSL远程调试" class="md-nav__link">
+      WSL远程调试
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Linux/ch0/" title="Whois命令传输文件" class="md-nav__link">
+      Whois命令传输文件
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Database
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Database
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../database/数据库基本概念/" title="数据库的基本概念" class="md-nav__link">
+      数据库的基本概念
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../database/腾讯蚂蚁金服京东使用的数据库/" title="腾讯，蚂蚁金服京东使用的数据库" class="md-nav__link">
+      腾讯，蚂蚁金服京东使用的数据库
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Git
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Git
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../git/" title="Index" class="md-nav__link">
+      Index
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../git/git0/" title="git远程仓库和本地发生冲突" class="md-nav__link">
+      git远程仓库和本地发生冲突
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../git/gitdiff/" title="git diff" class="md-nav__link">
+      git diff
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Javascript
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Javascript
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/js廖雪峰阅读笔记1/" title="廖雪峰js阅读笔记1" class="md-nav__link">
+      廖雪峰js阅读笔记1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/js得继承机制/" title="javascript的继承机制" class="md-nav__link">
+      javascript的继承机制
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/函数的定义和调用/" title="函数定义和调用" class="md-nav__link">
+      函数定义和调用
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/理解js的this关键字/" title="理解js的this关键字" class="md-nav__link">
+      理解js的this关键字
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../javascript/理解作用域/" title="理解JavaScript的作用域" class="md-nav__link">
+      理解JavaScript的作用域
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      Leetcode
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        Leetcode
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../leetcode/4-公共前缀/" title="查找公共前缀 4" class="md-nav__link">
+      查找公共前缀 4
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../leetcode/4Sum/" title="4Sum" class="md-nav__link">
+      4Sum
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../leetcode/RemoveElement/" title="RemoveElement" class="md-nav__link">
+      RemoveElement
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../leetcode/Z行字符串/" title="Z形字符串" class="md-nav__link">
+      Z形字符串
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../leetcode/isVaildBST/" title="isValidBST" class="md-nav__link">
+      isValidBST
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../leetcode/java的一些坑/" title="java的一些坑" class="md-nav__link">
+      java的一些坑
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../leetcode/常用的查找算法/" title="常用的查找算法" class="md-nav__link">
+      常用的查找算法
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      Matlab&steg
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        Matlab&steg
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../matlab&steg/ch0/" title="matlab处理图像" class="md-nav__link">
+      matlab处理图像
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      Network
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        Network
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../network/ip地址/" title="ip地址" class="md-nav__link">
+      ip地址
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../network/滑动窗口协议/" title="TCP协议的滑动窗口" class="md-nav__link">
+      TCP协议的滑动窗口
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../network/认识互联网/" title="计算机网络入门" class="md-nav__link">
+      计算机网络入门
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
+    
+    <label class="md-nav__link" for="nav-12">
+      Node
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-12">
+        Node
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../node/" title="Index" class="md-nav__link">
+      Index
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../node/websocket/" title="websocket协议" class="md-nav__link">
+      websocket协议
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13">
+    
+    <label class="md-nav__link" for="nav-13">
+      Opencv
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-13">
+        Opencv
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../opencv/opencv基本操作/" title="opencv基本操作" class="md-nav__link">
+      opencv基本操作
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-14" type="checkbox" id="nav-14">
+    
+    <label class="md-nav__link" for="nav-14">
+      Php
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-14">
+        Php
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../php/" title="php" class="md-nav__link">
+      php
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../php/Laravel/" title="Laravel框架" class="md-nav__link">
+      Laravel框架
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../php/algorithm/" title="常用算法" class="md-nav__link">
+      常用算法
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../php/php-code-trick/" title="常用的PHP代码" class="md-nav__link">
+      常用的PHP代码
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../php/php-storm相关设置/" title="php-storm相关设置" class="md-nav__link">
+      php-storm相关设置
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../php/php0/" title="面向对象" class="md-nav__link">
+      面向对象
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../php/php语法补充/" title="php语法补充" class="md-nav__link">
+      php语法补充
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../php/php调试源码步骤/" title="php如何调试源码" class="md-nav__link">
+      php如何调试源码
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../php/php闭包和匿名函数/" title="闭包和匿名函数" class="md-nav__link">
+      闭包和匿名函数
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../php/thinkphp学习笔记/" title="thinkphp学习笔记" class="md-nav__link">
+      thinkphp学习笔记
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-15" type="checkbox" id="nav-15" checked>
+    
+    <label class="md-nav__link" for="nav-15">
+      Reverse
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-15">
+        Reverse
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" title="CTF 2019Q2 readyu crackme 出题思路" class="md-nav__link md-nav__link--active">
+      CTF 2019Q2 readyu crackme 出题思路
+    </a>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../bomb-whu/" title="bomb-whu" class="md-nav__link">
+      bomb-whu
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../bomb/" title="bomb游戏" class="md-nav__link">
+      bomb游戏
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="ctf-2019q2-readyu-crackme">CTF 2019Q2 readyu crackme 出题思路<a class="headerlink" href="#ctf-2019q2-readyu-crackme" title="Permanent link">&para;</a></h1>
+<p>(1) 序列号</p>
+<p>本题唯一序列号SN为：</p>
+<p>KCTFREADYKXXXX1548396171915056368526513804948765619094392315806578461796159505215278288254</p>
+<p>(2) 方程</p>
+<p>算法基于二次剩余与离散对数， 建立了2个方程 (1) (2)  见下文。并且模同一个素数。所以暂定取名 “一石二鸟”。</p>
+<p>P=2^255-19 是一个素数, base16 或者base10如下：</p>
+<p>P(hex)=7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFED</p>
+<p>P(dec)=57896044618658097711785492504343953926634992332820282019728792003956564819949</p>
+<p>序列号格式为两段字符， + 表示字符串合并：</p>
+<p>SN = “s1” + “XXXX” + “s2”</p>
+<p>s1是大写字母串， s2是十进制数字串。 数值上， 1 &lt; s1,  s2 &lt; P</p>
+<p>其中, s1,s2 是未知量， d是s1变换而来的未知量。</p>
+<p>s1逆序变换，加上最小位调整， 然后base25解码得到d. (Y,G)内置于程序之中。</p>
+<p>64*(s2-s1)^4 + (s2-s1)^2 + 3 = s1 mod P    ... (1)</p>
+<p>G^d = Y  mod P      ... (2)</p>
+<p>G,Y 是已知数, 范围 [ 1, P-1]:</p>
+<p>Y = 100</p>
+<p>G = 9230197858975018299629857977411527954550899478307510809210520967346958600039</p>
+<p>(3)  解法</p>
+<p>解法：首先解方程2， 得到d ， 转换为s1 ； 然后再解方程1 得到s2。</p>
+<p>(3.1) 解方程(2)</p>
+<p>方程(2)解释如下：</p>
+<p>d = base25.reverse(s1) ....(3)</p>
+<p>随机验证任何一对，结果都是一样的。</p>
+<p>(Y,G) =</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    &quot;100,9230197858975018299629857977411527954550899478307510809210520967346958600039&quot;,
+
+    &quot;101,50414221767352083765613498524674590844333823720255656432490557866777248860034&quot;,
+
+    &quot;102,38377684164112914669201831650756813551072223314592288217929947158283532270268&quot;,
+
+    &quot;103,13436195533519778671648120865743178010431697022400670384909515001970400645091&quot;,
+</pre></div>
+</td></tr></table>
+
+<p>比如 Y=100,</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span> G=9230197858975018299629857977411527954550899478307510809210520967346958600039
+</pre></div>
+</td></tr></table>
+
+<p>G^d = Y mod P ,  P是256bit的大素数。</p>
+<p>表面一看，需要解256 bit的离散对数， 需要解离散对数工具，比如gdlog。</p>
+<p>GDLOG</p>
+<p>Implementation of the GNFS for discrete logarithm problem in GF(p)</p>
+<p><a href="https://sourceforge.net/projects/gdlog/">https://sourceforge.net/projects/gdlog/</a></p>
+<p>但本题，程序里给出了条件， d 转化为base25字符时，最长为10个字节。</p>
+<p>所以数量级极大地缩小， 只有47bits。</p>
+<p>也就是d &lt; limit, limit = 25^10 = 95367431640625 。</p>
+<p>因此，用 pollard kangaroo 算法求解  d, 范围为 band = (1, 95367431640625) 只有47 bits。</p>
+<p>kangaroo算法是解决区间band = (a, b)上离散对数问题很有效的方法,在平均意义下需要进行2 * √|a-b|次群操作。</p>
+<p>期望步数 2 <em>（limit^0.5)= 2</em> 9765625, 也就是大概2000万次。经测试， 大概30-60秒之间。</p>
+<p>我们得到:</p>
+<p>d(dec) = 79821823136933</p>
+<p>d(hex)= 4898F769D4A5</p>
+<p>base25table=ABCDEFGHKJILMNOPQRSTUVWYZ </p>
+<p>是26个大写字母表，(扣除X, 并且K，I互换位置）</p>
+<p>得到 d.base25 = UYDAERFTCK</p>
+<p>逆序后得到： s = d.base25.reverse = KCTFREADYU</p>
+<p>为了防止被猜测到s1， 低位做了修正，修正值 diff = 'U' - 'K' = 10：</p>
+<p>注册码里的采用KCTFREADYK，</p>
+<p>s1 = KCTFREADYK + diff = KCTFREADYU</p>
+<p>s1(hex) = 4B435446524541445955</p>
+<p>(3.2) 解方程(1)</p>
+<p>(3.2.1)</p>
+<p>首先，根据一般的二次剩余方程， 可以配方以后求解：</p>
+<p>a*x^2 + bx + c = 0  mod p</p>
+<p>两边乘以4a配方:</p>
+<p>4a<sup>2*x</sup>2 + 4a*bx + 4ac = 0  mod p</p>
+<p>方程变为</p>
+<p>(2a*x + b)<sup>2 = b</sup>2 - 4ac</p>
+<p>令delta = b^2 - 4ac, 就可以归结为求  sqroot(delta) mod p：</p>
+<p>x1 = (-b - sqroot(delta))/(2a)   mod p</p>
+<p>x2 = (-b + sqroot(delta))/(2a)   mod p</p>
+<p>注意，这里的除法是模P的逆。</p>
+<p>(3.2.2)</p>
+<p>方程(1)解释如下：</p>
+<p>64*(s2 - s1)^4 +  (s2-s1)^2 + 3 - s1 = 0 mod P</p>
+<p>F(x)是一个4次多项式：F(x) = a4<em>x^4 + a2</em>x^2 + a0</p>
+<p>这里取x = s2 - s1, a4 = 64, a2 = 1, a0 = 3</p>
+<p>F(x) 可以简化为一个二次剩余方程，</p>
+<p>64*(s2 - s1)^4 +  (s2-s1)^2 + 3 = s1  mod P  ... (4)</p>
+<p>64*r^2 + r + 3 = s1 mod p ,</p>
+<p>=&gt; 64*r^2 + r  = (s1 - 3) mod p</p>
+<p>两边乘以4a, 加上1:</p>
+<p>4<em>64</em>64<em>r^2 + 256</em>r + 1 = 256*(s1-3) + 1 mod p</p>
+<p>(128r + 1)^2 = 256*(s1-3) + 1  mod p</p>
+<p>s1 = 4B435446524541445955, s1-3 = 4B435446524541445952</p>
+<p>乘以256就是左移一个字节：</p>
+<p>(3.2.3)</p>
+<p>方程简化为：</p>
+<p>(128r + 1)^2 = 4B43544652454144595201  mod p  ...(5)</p>
+<p>r =  (sqroot(4B43544652454144595201, P) - 1)/128</p>
+<p>第一步，方程(5)求解首先求得两个解r1,r2。</p>
+<p>Y = 4B43544652454144595201</p>
+<p>sqroot(Y, P)， RDLP 求解。</p>
+<p>Two sqroots of Y (mod P), in HEX BASE.</p>
+<p>G1-258B783A22015B08A6C64FB55644BAACCDA201473D4B6786821056707C680B58</p>
+<p>G2-5A7487C5DDFEA4F75939B04AA9BB4553325DFEB8C2B498797DEFA98F8397F495</p>
+<p>再求得：</p>
+<p>r1=2D4B16F0744402B6114D8C9F6AAC8975599B44028E7A96CF0D0420ACE0F8D010</p>
+<p>r2=1CB4E90F8BBBFD49EEB273609553768AA664BBFD71856930F2FBDF531F072FE5 </p>
+<p>然后r1,r2分别求解二次剩余，各有两个解，所以一共有4个解。</p>
+<p>第二步， 解出 x^2 = r mod p , 可用RDLP求解。</p>
+<p>root(r1)= </p>
+<p>x2-3CCA260F45B79993C67F35F7A716B28BBA591BA35593C8DEB9B959C2CE43AE21</p>
+<p>x3-4335D9F0BA48666C3980CA0858E94D7445A6E45CAA6C37214646A63D31BC51CC</p>
+<p>root(r2)=</p>
+<p>x4-7C93A389F44E31BC25D90165624292389B47C2C27F60286FF627A6FC3DB84BC4</p>
+<p>x1-036C5C760BB1CE43DA26FE9A9DBD6DC764B83D3D809FD79009D85903C247B429</p>
+<p>这4个解记作x1,x2,x3,x4, 恰好每一个都分布在(1, P)的4个区间之一。</p>
+<p>(0-&frac14;), (&frac14;-&frac12;), (&frac12; - &frac34;), (&frac34;, 1)</p>
+<p>然后： s2 = s1 + X  , 也有4个s2， 并转为10进制表示。</p>
+<p>最后合并：</p>
+<p>SN = "s2" + "XXXX" + "s1"</p>
+<p>4个解为：</p>
+<p>SN_X1 = KCTFREADYKXXXX1548396171915056368526513804948765619094392315806578461796159505215278288254</p>
+<p>SN_X2=  KCTFREADYKXXXX27495936700183671733408543181646240981077460232127048216208422649817010276214</p>
+<p>SN_X3=  KCTFREADYKXXXX30400107918474425978376949322697712945557532100693234514359350753673330338593</p>
+<p>SN_X4=  KCTFREADYKXXXX56347648446743041343258978699395188307540600017013704268771613898275062326553</p>
+<p>题目取最小的解：</p>
+<p>x &lt; P/4，SN_X1 为有效答案。</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../php/thinkphp学习笔记/" title="thinkphp学习笔记" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  上一页
+                </span>
+                thinkphp学习笔记
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../bomb-whu/" title="bomb-whu" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  下一页
+                </span>
+                bomb-whu
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.245445c6.js"></script>
+      
+        
+        
+          
+          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+                <script src="../../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../../assets/javascripts/lunr/lunr.ja.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>

@@ -228,7 +228,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../database/数据库基本概念/" title="Database" class="md-tabs__link">
+        <a href="../../database/SQL/" title="Database" class="md-tabs__link">
           Database
         </a>
       
@@ -653,6 +653,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../database/SQL/" title="常见的SQL语句" class="md-nav__link">
+      常见的SQL语句
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../database/数据库基本概念/" title="数据库的基本概念" class="md-nav__link">
       数据库的基本概念
     </a>
@@ -959,6 +971,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../matlab&steg/二值图像的隐写/" title="二值图像的隐写" class="md-nav__link">
+      二值图像的隐写
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1103,6 +1127,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../opencv/多媒体第一次作业/" title="多媒体第一次作业" class="md-nav__link">
+      多媒体第一次作业
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1207,6 +1243,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../php安装xdebug扩展/" title="php安装xdebug扩展" class="md-nav__link">
+      php安装xdebug扩展
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../php语法补充/" title="php语法补充" class="md-nav__link">
       php语法补充
     </a>
@@ -1272,6 +1320,13 @@
         <li class="md-nav__item">
   <a href="#thinkphp_1" title="thinkphp中依赖注入" class="md-nav__link">
     thinkphp中依赖注入
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thinkphp_2" title="thinkphp路由初体验" class="md-nav__link">
+    thinkphp路由初体验
   </a>
   
 </li>
@@ -1379,6 +1434,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#thinkphp_2" title="thinkphp路由初体验" class="md-nav__link">
+    thinkphp路由初体验
+  </a>
+  
+</li>
+      
       
       
       
@@ -1481,6 +1543,96 @@
 </td></tr></table>
 
 <p><a href="https://www.kancloud.cn/mikkle/thinkphp5_study/331362">thinkphp实战开发</a></p>
+<h2 id="thinkphp_2">thinkphp路由初体验<a class="headerlink" href="#thinkphp_2" title="Permanent link">&para;</a></h2>
+<p>由于windows的<code>composer</code>出问题了一直没解决，就是在提示你<code>openssl</code>没有启用，但是我尝试了很多次启用也没成功，干脆就用Linux好了</p>
+<p><code>composer</code>安装thinkphp5</p>
+<p>中间还遇到了一个坑，<a href="https://blog.csdn.net/hd2killers/article/details/82773094">zshcomposer不能指定版本</a></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>➜  WWW composer create-project topthink/think<span class="o">=</span><span class="m">5</span>.1.* think5
+Installing topthink/think <span class="o">(</span>v5.1.38<span class="o">)</span>
+  - Installing topthink/think <span class="o">(</span>v5.1.38<span class="o">)</span>: Downloading <span class="o">(</span><span class="m">100</span>%<span class="o">)</span>
+Created project in think5
+Loading composer repositories with package information
+Updating dependencies <span class="o">(</span>including require-dev<span class="o">)</span>
+Package operations: <span class="m">2</span> installs, <span class="m">0</span> updates, <span class="m">0</span> removals
+  - Installing topthink/think-installer <span class="o">(</span>v2.0.0<span class="o">)</span>: Downloading <span class="o">(</span><span class="m">100</span>%<span class="o">)</span>
+  - Installing topthink/framework <span class="o">(</span>v5.1.38.1<span class="o">)</span>: Downloading <span class="o">(</span><span class="m">100</span>%<span class="o">)</span>
+Writing lock file
+Generating autoload files
+</pre></div>
+</td></tr></table>
+
+<p>安装完成之后就可以运行thinkphp的应用了，之前以为一个web服务器是只能安装一个thinkphp的应用，但是实际上是可以安装多个的</p>
+<p><code>thinkphp</code>的<code>route</code>文件夹下是注册的路由：</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="x">Route::get(&#39;think&#39;, function () {</span>
+<span class="x">    return &#39;hello,ThinkPHP5!&#39;;</span>
+<span class="x">});</span>
+
+<span class="x">Route::get(&#39;hello/:name&#39;, &#39;index/hello&#39;);</span>
+
+<span class="x">return [</span>
+
+<span class="x">];</span>
+</pre></div>
+</td></tr></table>
+
+<p>访问<code>public</code>下的index.php同时加上<code>hello</code>和传递的参数111</p>
+<p>通过<code>Route::get('hello/:name', 'index/hello');</code>传递到<code>index</code>控制器下的<code>hello</code>方法</p>
+<p><img alt="1569910260233" src="../assets/1569910260233.png" /></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="k">namespace</span> <span class="nx">app\index\controller</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Index</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">index</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="s1">&#39;&lt;style type=&quot;text/css&quot;&gt;*{ padding: 0; margin: 0; } div{ padding: 4px 48px.../static/client.js&quot;&gt;&lt;/script&gt;&lt;think id=&quot;eab4b9f840753f8e7&quot;&gt;&lt;/think&gt;&#39;</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">hello</span><span class="p">(</span><span class="nv">$name</span> <span class="o">=</span> <span class="s1">&#39;ThinkPHP5&#39;</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="s1">&#39;hello,&#39;</span> <span class="o">.</span> <span class="nv">$name</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
+<p>如果把之前的那个注册路由给删掉</p>
+<p>那我们就必须访问<code>&lt;http://localhost/think5/public/index.php/index/index/hello/name/111&gt;</code></p>
+<p>才能得到相同的结果</p>
+<p>因为<code>thinkphp5</code>的入口文件是<code>index.php</code>我们要访问的是<code>index</code>模块下的<code>index</code>控制器下的<code>hello</code>方法传入的参数是<code>name</code>为111</p>
+<p><img alt="1569910626371" src="../assets/1569910626371.png" /></p>
                 
                   
                 

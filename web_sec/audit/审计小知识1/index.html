@@ -1,0 +1,3422 @@
+
+
+
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="ja">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
+    
+    
+      
+        <title>审计小知识1 - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.0284f74d.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.01803549.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans:300,400,400i,700|Source+Code+Pro&display=fallback">
+        <style>body,input{font-family:"Noto Sans","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Source Code Pro","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="white" data-md-color-accent="red">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#1" tabindex="1" class="md-skip">
+        跳转至
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../../.." title="My Docs" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon">school</i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              My Docs
+            </span>
+            <span class="md-header-nav__topic">
+              
+                审计小知识1
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." title="prontosil的学习小站" class="md-tabs__link">
+        prontosil的学习小站
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../2019学期/Crypto/cry0/" title="2019学期" class="md-tabs__link">
+          2019学期
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../IOT/CVE-2019-16920复现/" title="IOT" class="md-tabs__link">
+          IOT
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../Linux/" title="Linux" class="md-tabs__link">
+          Linux
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../git/" title="Git" class="md-tabs__link">
+          Git
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../language/javascript/js廖雪峰阅读笔记1/" title="Language" class="md-tabs__link">
+          Language
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../leetcode/4-公共前缀/" title="Leetcode" class="md-tabs__link">
+          Leetcode
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../reverse/CTF 2019Q2 readyu crackme/" title="Reverse" class="md-tabs__link">
+          Reverse
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../SQL/" title="Web sec" class="md-tabs__link">
+          Web sec
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../writeup/" title="Writeup" class="md-tabs__link">
+          Writeup
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../漏洞分析/0708/" title="漏洞分析" class="md-tabs__link">
+          漏洞分析
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../../.." title="My Docs" class="md-nav__button md-logo">
+      
+        <i class="md-icon">school</i>
+      
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="prontosil的学习小站" class="md-nav__link">
+      prontosil的学习小站
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      2019学期
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        2019学期
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1">
+    
+    <label class="md-nav__link" for="nav-2-1">
+      Crypto
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        Crypto
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../2019学期/Crypto/cry0/" title="公开密钥密码学" class="md-nav__link">
+      公开密钥密码学
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../2019学期/Crypto/cry1/" title="Cry1" class="md-nav__link">
+      Cry1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../2019学期/Crypto/cry2/" title="RSA算法" class="md-nav__link">
+      RSA算法
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../2019学期/Crypto/cry3/" title="The one time pad" class="md-nav__link">
+      The one time pad
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2">
+      Alogrithm
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        Alogrithm
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../2019学期/alogrithm/java-Arraylist和Vectore/" title="java List接口" class="md-nav__link">
+      java List接口
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../2019学期/alogrithm/readme/" title="算法复习题" class="md-nav__link">
+      算法复习题
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../2019学期/alogrithm/哈夫曼树/" title="哈夫曼树" class="md-nav__link">
+      哈夫曼树
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+    
+    <label class="md-nav__link" for="nav-2-3">
+      Database
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        Database
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../2019学期/database/SQL/" title="常见的SQL语句" class="md-nav__link">
+      常见的SQL语句
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../2019学期/database/数据库基本概念/" title="数据库的基本概念" class="md-nav__link">
+      数据库的基本概念
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../2019学期/database/腾讯蚂蚁金服京东使用的数据库/" title="腾讯，蚂蚁金服京东使用的数据库" class="md-nav__link">
+      腾讯，蚂蚁金服京东使用的数据库
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4">
+    
+    <label class="md-nav__link" for="nav-2-4">
+      Matlab&steg
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-4">
+        Matlab&steg
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../2019学期/matlab&steg/matlab处理图像/" title="matlab处理图像" class="md-nav__link">
+      matlab处理图像
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../2019学期/matlab&steg/二值图像的隐写/" title="二值图像的隐写" class="md-nav__link">
+      二值图像的隐写
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-5" type="checkbox" id="nav-2-5">
+    
+    <label class="md-nav__link" for="nav-2-5">
+      Network
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-5">
+        Network
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../2019学期/network/ip地址/" title="ip地址" class="md-nav__link">
+      ip地址
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../2019学期/network/滑动窗口协议/" title="TCP协议的滑动窗口" class="md-nav__link">
+      TCP协议的滑动窗口
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../2019学期/network/认识互联网/" title="计算机网络入门" class="md-nav__link">
+      计算机网络入门
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-6" type="checkbox" id="nav-2-6">
+    
+    <label class="md-nav__link" for="nav-2-6">
+      多媒体情报
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-6">
+        多媒体情报
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../2019学期/多媒体情报/opencv基本操作/" title="opencv基本操作" class="md-nav__link">
+      opencv基本操作
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../2019学期/多媒体情报/sift算子/" title="Sift算子" class="md-nav__link">
+      Sift算子
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../2019学期/多媒体情报/多媒体第一次作业/" title="多媒体第一次作业" class="md-nav__link">
+      多媒体第一次作业
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../2019学期/多媒体情报/多媒体第二次作业/" title="多媒体第二次作业" class="md-nav__link">
+      多媒体第二次作业
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      IOT
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        IOT
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../IOT/CVE-2019-16920复现/" title="CVE-2019-16920 复现" class="md-nav__link">
+      CVE-2019-16920 复现
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../IOT/Cisco RV130W 1.0.3.44/" title="Cisco RV130W 1.0.3.44 复现过程" class="md-nav__link">
+      Cisco RV130W 1.0.3.44 复现过程
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../IOT/Synology router/" title="Synology router相关漏洞收集" class="md-nav__link">
+      Synology router相关漏洞收集
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../IOT/ciscoRV130W复现/" title="ciscoRV130W 复现" class="md-nav__link">
+      ciscoRV130W 复现
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../IOT/ubuntu的网络配置/" title="Ubuntu的网络配置" class="md-nav__link">
+      Ubuntu的网络配置
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../IOT/华为路由器/" title="华为路由器Huawei HG532漏洞复现过程" class="md-nav__link">
+      华为路由器Huawei HG532漏洞复现过程
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../IOT/积累一下Linux的网络配置常识/" title="积累一下Linux的网络配置常识" class="md-nav__link">
+      积累一下Linux的网络配置常识
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../IOT/群晖路由器——SRM_RT1900ac_8017/" title="SRM_RT1900ac_8017" class="md-nav__link">
+      SRM_RT1900ac_8017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../IOT/路由器的一些环境配置工作/" title="路由器的一些环境配置工作" class="md-nav__link">
+      路由器的一些环境配置工作
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Linux
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Linux
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Linux/" title="Index" class="md-nav__link">
+      Index
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Linux/Linuxshell编程/" title="Linuxshell编程" class="md-nav__link">
+      Linuxshell编程
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Linux/Linux磁盘管理/" title="Linux磁盘管理" class="md-nav__link">
+      Linux磁盘管理
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Linux/WSL远程调试/" title="WSL远程调试" class="md-nav__link">
+      WSL远程调试
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Linux/bochs使用指南/" title="bochs使用指南" class="md-nav__link">
+      bochs使用指南
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Linux/bochs第一次实验/" title="bochs第一次实验" class="md-nav__link">
+      bochs第一次实验
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Linux/ch0/" title="Whois命令传输文件" class="md-nav__link">
+      Whois命令传输文件
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Git
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Git
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../git/" title="Index" class="md-nav__link">
+      Index
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../git/gitdiff命令/" title="git diff" class="md-nav__link">
+      git diff
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../git/git远程仓库与本地发生冲突/" title="git远程仓库和本地发生冲突" class="md-nav__link">
+      git远程仓库和本地发生冲突
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Language
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Language
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-1" type="checkbox" id="nav-6-1">
+    
+    <label class="md-nav__link" for="nav-6-1">
+      Javascript
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-1">
+        Javascript
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../language/javascript/js廖雪峰阅读笔记1/" title="廖雪峰js阅读笔记1" class="md-nav__link">
+      廖雪峰js阅读笔记1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../language/javascript/js得继承机制/" title="javascript的继承机制" class="md-nav__link">
+      javascript的继承机制
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../language/javascript/ng0/" title="ng起步" class="md-nav__link">
+      ng起步
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../language/javascript/ng1/" title="ng官方文档入门手册" class="md-nav__link">
+      ng官方文档入门手册
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../language/javascript/函数的定义和调用/" title="函数定义和调用" class="md-nav__link">
+      函数定义和调用
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../language/javascript/理解js的this关键字/" title="理解js的this关键字" class="md-nav__link">
+      理解js的this关键字
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../language/javascript/理解作用域/" title="理解JavaScript的作用域" class="md-nav__link">
+      理解JavaScript的作用域
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-1-8" type="checkbox" id="nav-6-1-8">
+    
+    <label class="md-nav__link" for="nav-6-1-8">
+      Node
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-6-1-8">
+        Node
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../language/javascript/node/" title="Index" class="md-nav__link">
+      Index
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../language/javascript/node/websocket/" title="websocket协议" class="md-nav__link">
+      websocket协议
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-2" type="checkbox" id="nav-6-2">
+    
+    <label class="md-nav__link" for="nav-6-2">
+      Php
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-2">
+        Php
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../language/php/" title="php" class="md-nav__link">
+      php
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../language/php/Laravel/" title="Laravel框架" class="md-nav__link">
+      Laravel框架
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../language/php/algorithm/" title="常用算法" class="md-nav__link">
+      常用算法
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../language/php/php-code-trick/" title="常用的PHP代码" class="md-nav__link">
+      常用的PHP代码
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../language/php/php-storm相关设置/" title="php-storm相关设置" class="md-nav__link">
+      php-storm相关设置
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../language/php/php0/" title="面向对象" class="md-nav__link">
+      面向对象
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../language/php/php安装xdebug扩展/" title="php安装xdebug扩展" class="md-nav__link">
+      php安装xdebug扩展
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../language/php/php语法补充/" title="php语法补充" class="md-nav__link">
+      php语法补充
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../language/php/php调试源码步骤/" title="php如何调试源码" class="md-nav__link">
+      php如何调试源码
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../language/php/php闭包和匿名函数/" title="闭包和匿名函数" class="md-nav__link">
+      闭包和匿名函数
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../language/php/thinkphp学习笔记/" title="thinkphp学习笔记" class="md-nav__link">
+      thinkphp学习笔记
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Leetcode
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Leetcode
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../leetcode/4-公共前缀/" title="查找公共前缀 4" class="md-nav__link">
+      查找公共前缀 4
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../leetcode/4Sum/" title="4Sum" class="md-nav__link">
+      4Sum
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../leetcode/RemoveElement/" title="RemoveElement" class="md-nav__link">
+      RemoveElement
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../leetcode/Z行字符串/" title="Z形字符串" class="md-nav__link">
+      Z形字符串
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../leetcode/isVaildBST/" title="isValidBST" class="md-nav__link">
+      isValidBST
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../leetcode/java的一些坑/" title="java的一些坑" class="md-nav__link">
+      java的一些坑
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../leetcode/常用的查找算法/" title="常用的查找算法" class="md-nav__link">
+      常用的查找算法
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../leetcode/解码方法91/" title="解码方法——91" class="md-nav__link">
+      解码方法——91
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Reverse
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Reverse
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reverse/CTF 2019Q2 readyu crackme/" title="CTF 2019Q2 readyu crackme 出题思路" class="md-nav__link">
+      CTF 2019Q2 readyu crackme 出题思路
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reverse/bomb-whu/" title="bomb-whu" class="md-nav__link">
+      bomb-whu
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reverse/bomb/" title="bomb游戏" class="md-nav__link">
+      bomb游戏
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9" checked>
+    
+    <label class="md-nav__link" for="nav-9">
+      Web sec
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        Web sec
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9-1" type="checkbox" id="nav-9-1">
+    
+    <label class="md-nav__link" for="nav-9-1">
+      SQL
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-9-1">
+        SQL
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../SQL/" title="SQL注入" class="md-nav__link">
+      SQL注入
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../SQL/blindSQL/" title="blindSQL" class="md-nav__link">
+      blindSQL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../SQL/mysql基础知识/" title="mysql基础知识" class="md-nav__link">
+      mysql基础知识
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../SQL/sql基本姿势/" title="SQL姿势" class="md-nav__link">
+      SQL姿势
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../SQL/sql注入姿势积累/" title="sql注入姿势积累" class="md-nav__link">
+      sql注入姿势积累
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../SQL/sql语句基本知识/" title="SQL(结构化查询语言)基本知识" class="md-nav__link">
+      SQL(结构化查询语言)基本知识
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9-2" type="checkbox" id="nav-9-2">
+    
+    <label class="md-nav__link" for="nav-9-2">
+      SSRF
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-9-2">
+        SSRF
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../SSRF/" title="SSRF参考" class="md-nav__link">
+      SSRF参考
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../SSRF/bypassing/" title="绕过SSRF的防御" class="md-nav__link">
+      绕过SSRF的防御
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../SSRF/ssrftrick/" title="ssrf中的trick" class="md-nav__link">
+      ssrf中的trick
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../SSRF/入群题/" title="记录一道入群题" class="md-nav__link">
+      记录一道入群题
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../SSRF/阅读ctfwiki摘录的/" title="阅读ctfwiki摘录的" class="md-nav__link">
+      阅读ctfwiki摘录的
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9-3" type="checkbox" id="nav-9-3">
+    
+    <label class="md-nav__link" for="nav-9-3">
+      XSS
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-9-3">
+        XSS
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../XSS/" title="XSS" class="md-nav__link">
+      XSS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../XSS/CSP/" title="CSP" class="md-nav__link">
+      CSP
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../XSS/CSP绕过总结/" title="CSP绕过总结" class="md-nav__link">
+      CSP绕过总结
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../XSS/DompurifyXSSbypass/" title="Dompurify XSSbypass" class="md-nav__link">
+      Dompurify XSSbypass
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../XSS/XSSauditor/" title="XSS" class="md-nav__link">
+      XSS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../XSS/googlectf2017joe/" title="googlectf2017joe" class="md-nav__link">
+      googlectf2017joe
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../XSS/利用Windows Defender侧信道攻击/" title="利用windows defender" class="md-nav__link">
+      利用windows defender
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9-4" type="checkbox" id="nav-9-4">
+    
+    <label class="md-nav__link" for="nav-9-4">
+      XXE
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-9-4">
+        XXE
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../XXE/PHP结合XXE/" title="PHP结合XXE利用" class="md-nav__link">
+      PHP结合XXE利用
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../XXE/XXE常用payload/" title="XXE常用payload" class="md-nav__link">
+      XXE常用payload
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9-5" type="checkbox" id="nav-9-5">
+    
+    <label class="md-nav__link" for="nav-9-5">
+      advanAudit
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-9-5">
+        advanAudit
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../advanAudit/" title="审计进阶" class="md-nav__link">
+      审计进阶
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../advanAudit/java审计/" title="Java审计" class="md-nav__link">
+      Java审计
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../advanAudit/pcre/" title="php正则表达式分析" class="md-nav__link">
+      php正则表达式分析
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../advanAudit/phar协议/" title="phar协议" class="md-nav__link">
+      phar协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../advanAudit/php一些奇技淫巧/" title="php一些奇技淫巧" class="md-nav__link">
+      php一些奇技淫巧
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../advanAudit/seacms分析/" title="seacms漏洞分析" class="md-nav__link">
+      seacms漏洞分析
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../advanAudit/tp5/" title="thinkphp-RCE漏洞分析" class="md-nav__link">
+      thinkphp-RCE漏洞分析
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../advanAudit/windows中的一些trick/" title="windows中的一些trick" class="md-nav__link">
+      windows中的一些trick
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../advanAudit/小密圈摘录/" title="小密圈摘录的内容" class="md-nav__link">
+      小密圈摘录的内容
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../advanAudit/构造Webshell/" title="构造webshell" class="md-nav__link">
+      构造webshell
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../advanAudit/理解JavaScript的原型链/" title="理解JavaScript的原型链" class="md-nav__link">
+      理解JavaScript的原型链
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9-6" type="checkbox" id="nav-9-6" checked>
+    
+    <label class="md-nav__link" for="nav-9-6">
+      Audit
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-9-6">
+        Audit
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" title="代码审计" class="md-nav__link">
+      代码审计
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../code-breaking/" title="code-breaking" class="md-nav__link">
+      code-breaking
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../easyphp/" title="Easyphp" class="md-nav__link">
+      Easyphp
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../java/" title="从反序列化到命令执行 - Java 中的 POP 执行链" class="md-nav__link">
+      从反序列化到命令执行 - Java 中的 POP 执行链
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../nodejs/" title="Nodejs" class="md-nav__link">
+      Nodejs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../php-challenge/" title="php-challenge记录" class="md-nav__link">
+      php-challenge记录
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../phpSession/" title="PHP Session 序列化及反序列化处理器设置使用不当带来的安全隐患" class="md-nav__link">
+      PHP Session 序列化及反序列化处理器设置使用不当带来的安全隐患
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../php不常见的函数/" title="php不常用函数" class="md-nav__link">
+      php不常用函数
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../php反射/" title="php反射" class="md-nav__link">
+      php反射
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../webshell构造/" title="Webshell构造" class="md-nav__link">
+      Webshell构造
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../一些题目记录/" title="example" class="md-nav__link">
+      example
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../利用phar扩展php反序列化漏洞/" title="利用phar协议扩展PHP反序列化漏洞攻击面" class="md-nav__link">
+      利用phar协议扩展PHP反序列化漏洞攻击面
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../原型链污染/" title="原型链污染攻击" class="md-nav__link">
+      原型链污染攻击
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../反序列化/" title="反序列化" class="md-nav__link">
+      反序列化
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../审计小知识/" title="审计小知识0" class="md-nav__link">
+      审计小知识0
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        审计小知识1
+      </label>
+    
+    <a href="./" title="审计小知识1" class="md-nav__link md-nav__link--active">
+      审计小知识1
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#file_put_contentscopyfile_get_contentsunlinkfile_exists" title="file_put_contents、copy、file_get_contents等读取写入操作与unlink、file_exists等删除判断文件函数之间对于路径处理的差异导致的删除绕过" class="md-nav__link">
+    file_put_contents、copy、file_get_contents等读取写入操作与unlink、file_exists等删除判断文件函数之间对于路径处理的差异导致的删除绕过
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extractparse_str" title="extract()、parse_str() 等变量覆盖" class="md-nav__link">
+    extract()、parse_str() 等变量覆盖
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intval" title="intval()整数溢出、向下取整和整形判断的问题" class="md-nav__link">
+    intval()整数溢出、向下取整和整形判断的问题
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="浮点数精度问题导致的大小比较问题" class="md-nav__link">
+    浮点数精度问题导致的大小比较问题
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#is_numericintval" title="is_numeric()与intval()特性差异" class="md-nav__link">
+    is_numeric()与intval()特性差异
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strcmp" title="strcmp()数组比较绕过" class="md-nav__link">
+    strcmp()数组比较绕过
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sha1md5" title="sha1()、md5() 函数传入数组比较绕过" class="md-nav__link">
+    sha1()、md5() 函数传入数组比较绕过
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eregi" title="eregi()匹配绕过" class="md-nav__link">
+    eregi()匹配绕过
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#php-_" title="PHP变量名不能带有点[.] 和空格，否则在会被转化为下划线[_]" class="md-nav__link">
+    PHP变量名不能带有点[.] 和空格，否则在会被转化为下划线[_]
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#in_arrary" title="in_arrary()函数默认进行松散比较（进行类型转换）" class="md-nav__link">
+    in_arrary()函数默认进行松散比较（进行类型转换）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#htmlspecialcharsent_quotes" title="htmlspecialchars()函数默认只转义双引号不转义单引号，如果都转义的话需要添加上参数ENT_QUOTES" class="md-nav__link">
+    htmlspecialchars()函数默认只转义双引号不转义单引号，如果都转义的话需要添加上参数ENT_QUOTES
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#php4php521keymagic_quotes_gpc" title="在php4、php&lt;5.2.1中，变量的key值不受magic_quotes_gpc影响" class="md-nav__link">
+    在php4、php&lt;5.2.1中，变量的key值不受magic_quotes_gpc影响
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sprintf" title="sprintf()格式化漏洞（可以吃掉转义后的单引号" class="md-nav__link">
+    sprintf()格式化漏洞（可以吃掉转义后的单引号
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#php-and" title="php中 = 赋值运算的优先级高于and" class="md-nav__link">
+    php中 = 赋值运算的优先级高于and
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parse_urllibcurlurlssrf" title="parse_url与libcurl对与url的解析差异可能导致ssrf" class="md-nav__link">
+    parse_url与libcurl对与url的解析差异可能导致ssrf
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#urlfilter_varparse_urlssrf" title="url标准的灵活性导致绕过filter_var与parse_url进行ssrf" class="md-nav__link">
+    url标准的灵活性导致绕过filter_var与parse_url进行ssrf
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file_get_contentsxss" title="通过file_get_contents获取网页内容并返回到客户端有可能造成xss" class="md-nav__link">
+    通过file_get_contents获取网页内容并返回到客户端有可能造成xss
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="弱类型" class="md-nav__link">
+    弱类型
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../审计小知识2/" title="审计小知识2" class="md-nav__link">
+      审计小知识2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../审计小知识3/" title="审计小知识3" class="md-nav__link">
+      审计小知识3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../文件包含常见姿势/" title="文件包含常见姿势" class="md-nav__link">
+      文件包含常见姿势
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9-7" type="checkbox" id="nav-9-7">
+    
+    <label class="md-nav__link" for="nav-9-7">
+      Java审计
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-9-7">
+        Java审计
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../java审计/java/" title="java审计" class="md-nav__link">
+      java审计
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      Writeup
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        Writeup
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../writeup/" title="writeup" class="md-nav__link">
+      writeup
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../writeup/BUUCTF/" title="BUUCTF" class="md-nav__link">
+      BUUCTF
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../writeup/BreakIn2017/" title="BreakIn2017 WP" class="md-nav__link">
+      BreakIn2017 WP
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../writeup/Bypassing/" title="Bypassing PHP Null Byte Injection protections – Part II – CTF Write-up" class="md-nav__link">
+      Bypassing PHP Null Byte Injection protections – Part II – CTF Write-up
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../writeup/Bytectf2019/" title="Bytectf2019" class="md-nav__link">
+      Bytectf2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../writeup/CSAW2019/" title="CSAW2019" class="md-nav__link">
+      CSAW2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../writeup/Inshack2019/" title="InsHack 2019" class="md-nav__link">
+      InsHack 2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../writeup/Nu1L2019/" title="Nu1L2019" class="md-nav__link">
+      Nu1L2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../writeup/Ogeek/" title="Ogeek" class="md-nav__link">
+      Ogeek
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../writeup/SUCTF2019/" title="SUCTF2019" class="md-nav__link">
+      SUCTF2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../writeup/TokyoCTF/" title="东京CTF wp2018" class="md-nav__link">
+      东京CTF wp2018
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../writeup/balsn2019/" title="balsn2019" class="md-nav__link">
+      balsn2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../writeup/bugku/" title="bugku" class="md-nav__link">
+      bugku
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../writeup/dianfengjike2018/" title="巅峰极客" class="md-nav__link">
+      巅峰极客
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../writeup/fivespace/" title="第五空间" class="md-nav__link">
+      第五空间
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../writeup/hackcon2019/" title="hackcon2019" class="md-nav__link">
+      hackcon2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../writeup/hwb2018/" title="护网杯" class="md-nav__link">
+      护网杯
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../writeup/liveoverflow/" title="liveoverflow" class="md-nav__link">
+      liveoverflow
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../writeup/new-bugku/" title="newBugku" class="md-nav__link">
+      newBugku
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../writeup/picoCTF2019/" title="picoCTF2019" class="md-nav__link">
+      picoCTF2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../writeup/redpwnctf2019/" title="redpwnctf2019" class="md-nav__link">
+      redpwnctf2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../writeup/南邮ctf/" title="南邮ctf" class="md-nav__link">
+      南邮ctf
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      漏洞分析
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        漏洞分析
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../漏洞分析/0708/" title="Windows RDP 服务高危漏洞分析" class="md-nav__link">
+      Windows RDP 服务高危漏洞分析
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../漏洞分析/metasploit开发/" title="开发自己的metasploit模块" class="md-nav__link">
+      开发自己的metasploit模块
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../漏洞分析/thinkphp5漏洞跟踪/" title="thinkphp5 rce" class="md-nav__link">
+      thinkphp5 rce
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../漏洞分析/华为路由器漏洞复现过程/" title="华为路由器漏洞复现过程" class="md-nav__link">
+      华为路由器漏洞复现过程
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#file_put_contentscopyfile_get_contentsunlinkfile_exists" title="file_put_contents、copy、file_get_contents等读取写入操作与unlink、file_exists等删除判断文件函数之间对于路径处理的差异导致的删除绕过" class="md-nav__link">
+    file_put_contents、copy、file_get_contents等读取写入操作与unlink、file_exists等删除判断文件函数之间对于路径处理的差异导致的删除绕过
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extractparse_str" title="extract()、parse_str() 等变量覆盖" class="md-nav__link">
+    extract()、parse_str() 等变量覆盖
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intval" title="intval()整数溢出、向下取整和整形判断的问题" class="md-nav__link">
+    intval()整数溢出、向下取整和整形判断的问题
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="浮点数精度问题导致的大小比较问题" class="md-nav__link">
+    浮点数精度问题导致的大小比较问题
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#is_numericintval" title="is_numeric()与intval()特性差异" class="md-nav__link">
+    is_numeric()与intval()特性差异
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strcmp" title="strcmp()数组比较绕过" class="md-nav__link">
+    strcmp()数组比较绕过
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sha1md5" title="sha1()、md5() 函数传入数组比较绕过" class="md-nav__link">
+    sha1()、md5() 函数传入数组比较绕过
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eregi" title="eregi()匹配绕过" class="md-nav__link">
+    eregi()匹配绕过
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#php-_" title="PHP变量名不能带有点[.] 和空格，否则在会被转化为下划线[_]" class="md-nav__link">
+    PHP变量名不能带有点[.] 和空格，否则在会被转化为下划线[_]
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#in_arrary" title="in_arrary()函数默认进行松散比较（进行类型转换）" class="md-nav__link">
+    in_arrary()函数默认进行松散比较（进行类型转换）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#htmlspecialcharsent_quotes" title="htmlspecialchars()函数默认只转义双引号不转义单引号，如果都转义的话需要添加上参数ENT_QUOTES" class="md-nav__link">
+    htmlspecialchars()函数默认只转义双引号不转义单引号，如果都转义的话需要添加上参数ENT_QUOTES
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#php4php521keymagic_quotes_gpc" title="在php4、php&lt;5.2.1中，变量的key值不受magic_quotes_gpc影响" class="md-nav__link">
+    在php4、php&lt;5.2.1中，变量的key值不受magic_quotes_gpc影响
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sprintf" title="sprintf()格式化漏洞（可以吃掉转义后的单引号" class="md-nav__link">
+    sprintf()格式化漏洞（可以吃掉转义后的单引号
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#php-and" title="php中 = 赋值运算的优先级高于and" class="md-nav__link">
+    php中 = 赋值运算的优先级高于and
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parse_urllibcurlurlssrf" title="parse_url与libcurl对与url的解析差异可能导致ssrf" class="md-nav__link">
+    parse_url与libcurl对与url的解析差异可能导致ssrf
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#urlfilter_varparse_urlssrf" title="url标准的灵活性导致绕过filter_var与parse_url进行ssrf" class="md-nav__link">
+    url标准的灵活性导致绕过filter_var与parse_url进行ssrf
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file_get_contentsxss" title="通过file_get_contents获取网页内容并返回到客户端有可能造成xss" class="md-nav__link">
+    通过file_get_contents获取网页内容并返回到客户端有可能造成xss
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="弱类型" class="md-nav__link">
+    弱类型
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="1">审计小知识1<a class="headerlink" href="#1" title="Permanent link">&para;</a></h1>
+<h2 id="file_put_contentscopyfile_get_contentsunlinkfile_exists">file_put_contents、copy、file_get_contents等读取写入操作与unlink、file_exists等删除判断文件函数之间对于路径处理的差异导致的删除绕过<a class="headerlink" href="#file_put_contentscopyfile_get_contentsunlinkfile_exists" title="Permanent link">&para;</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$filename</span> <span class="o">=</span> <span class="no">__DIR__</span> <span class="o">.</span> <span class="s1">&#39;/tmp/&#39;</span> <span class="o">.</span> <span class="nv">$user</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">];</span>
+<span class="nv">$data</span> <span class="o">=</span> <span class="nv">$user</span><span class="p">[</span><span class="s1">&#39;info&#39;</span><span class="p">];</span>
+
+<span class="nb">file_put_contents</span><span class="p">(</span><span class="nv">$filename</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="nb">file_exists</span><span class="p">(</span><span class="nv">$filename</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nb">unlink</span><span class="p">(</span><span class="nv">$filename</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</td></tr></table>
+
+<blockquote>
+<p>查看php源码，其实我们能发现，php读取、写入文件，都会调用php_stream_open_wrapper_ex来打开流，而判断文件存在、重命名、删除文件等操作则无需打开文件流。</p>
+<p>我们跟一跟php_stream_open_wrapper_ex就会发现，其实最后会使用tsrm_realpath函数来将filename给标准化成一个绝对路径。而文件删除等操作则不会，这就是二者的区别。</p>
+<p>所以，如果我们传入的是文件名中包含一个不存在的路径，写入的时候因为会处理掉“../”等相对路径，所以不会出错；判断、删除的时候因为不会处理，所以就会出现“No such file or directory”的错误。</p>
+</blockquote>
+<p>于是乎linux可以通过<code>xxxxx/../test.php</code>、<code>test.php/.</code>windows可以通过<code>test.php:test test.ph&lt;</code>来绕过文件删除</p>
+<p>此外发现还可以使用伪协议<code>php://filter/resource=1.php</code>在file_ge_contents、copy等中读取文件内容，却可以绕过文件删除</p>
+<h2 id="extractparse_str">extract()、parse_str() 等变量覆盖<a class="headerlink" href="#extractparse_str" title="Permanent link">&para;</a></h2>
+<p>extract函数从数组导入变量（<code>$_GET</code>、<code>$_POST</code>）,将数组的键名作为变量的值。而parse_str函数则是从类似name=Bill&amp;age=60的格式字符串解析变量.如果在使用第一个函数没有设置<code>EXTR_SKIP</code>或者<code>EXTR_PREFIX_SAME</code>等处理变量冲突的参数时、第二个函数没有使用数组接受变量时将会导致变量覆盖的问题</p>
+<h2 id="intval">intval()整数溢出、向下取整和整形判断的问题<a class="headerlink" href="#intval" title="Permanent link">&para;</a></h2>
+<ul>
+<li>32位系统最大的带符号范围为-2147483648 到 2147483647，64位最大的是 9223372036854775807，因此，在32位系统上 intval(‘1000000000000’) 会返回 2147483647</li>
+<li>此外intval(10.99999)会返回10，intval和int等取整都是’截断’取整，并不是四舍五入</li>
+<li>intval函数进去取整时，是直到遇上数字或者正负号才开始进行转换，之后在遇到非数字或者结束符号（\0）时结束转换</li>
+</ul>
+<h2 id="_1">浮点数精度问题导致的大小比较问题<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>当小数小于10^-16后，PHP对于小数就大小不分了</p>
+<p>var_dump(1.000000000000000 == 1) &gt;&gt; TRUE</p>
+<p>var_dump(1.0000000000000001 == 1) &gt;&gt; TRUE</p>
+<h2 id="is_numericintval">is_numeric()与intval()特性差异<a class="headerlink" href="#is_numericintval" title="Permanent link">&para;</a></h2>
+<ul>
+<li>is_numeric函数在判断是否是数字时会忽略字符串开头的’ ‘、’\t’、’\n’、’\r’、’\v’、’\f’。而’.’可以出现在任意位置，E、e能出现在参数中间，仍可以被判断为数字。也就是说is_numeric(“\r\n\t 0.1e2”) &gt;&gt; TRUE</li>
+<li>intval()函数会忽略’’ ‘\n’、’\r’、’\t’、’\v’、’\0’ ，也就是说intval(“\r\n\t 12”) &gt;&gt; 12</li>
+</ul>
+<h2 id="strcmp">strcmp()数组比较绕过<a class="headerlink" href="#strcmp" title="Permanent link">&para;</a></h2>
+<p><code>int strcmp ( string $str1,string $str2 )</code></p>
+<ul>
+<li>
+<p>参数 str1第一个字符串。str2第二个字符串。如果 str1 小于 str2 返回 &lt; 0；</p>
+</li>
+<li>
+<p>如果 str1 大于 str2 返回 &gt; 0；如果两者相等，返回 0。</p>
+</li>
+</ul>
+<p>但是如果传入的<strong>两个变量是数组的话，函数会报错返回NULL</strong>，如果只是用strcmp()==0来判断的话就可以绕过</p>
+<h2 id="sha1md5">sha1()、md5() 函数传入数组比较绕过<a class="headerlink" href="#sha1md5" title="Permanent link">&para;</a></h2>
+<p>sha1（） MD5（）函数默认接收的参数是字符串类型，但是如果如果<strong>传入的参数是数组的话，函数就会报错返回NULL</strong> 类似<code>sha1(GET[‘name′])===sha1(GET[‘name′])===sha1(_GET[‘password’])</code>的比较就可以绕过</p>
+<h2 id="eregi">eregi()匹配绕过<a class="headerlink" href="#eregi" title="Permanent link">&para;</a></h2>
+<p>eregi（）默认接收字符串参数，如果传入数组，函数会报错并返回NULL。同时还可以%00 截断进行绕过</p>
+<h2 id="php-_">PHP变量名不能带有点[.] 和空格，否则在会被转化为下划线[_]<a class="headerlink" href="#php-_" title="Permanent link">&para;</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="x">parse_str(&quot;na.me=admin&amp;pass wd=123&quot;,$test);</span>
+<span class="x">var_dump($test); </span>
+
+<span class="x">array(2) {</span>
+<span class="x">  [&quot;na_me&quot;]=&gt;</span>
+<span class="x">  string(5) &quot;admin&quot;</span>
+<span class="x">  [&quot;pass_wd&quot;]=&gt;</span>
+<span class="x">  string(3) &quot;123&quot;</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="in_arrary">in_arrary()函数默认进行松散比较（进行类型转换）<a class="headerlink" href="#in_arrary" title="Permanent link">&para;</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="x">in_arrary(&quot;1asd&quot;,arrart(1,2,3,4))    =&gt; true</span>
+<span class="x">in_arrary(&quot;1asd&quot;,arrart(1,2,3,4),TRUE)    =&gt; false   \\(需要设置strict参数为true才会进行严格比较，进行类型检测)</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="htmlspecialcharsent_quotes">htmlspecialchars()函数默认只转义双引号不转义单引号，如果都转义的话需要添加上参数ENT_QUOTES<a class="headerlink" href="#htmlspecialcharsent_quotes" title="Permanent link">&para;</a></h2>
+<h2 id="php4php521keymagic_quotes_gpc">在php4、php&lt;5.2.1中，变量的key值不受magic_quotes_gpc影响<a class="headerlink" href="#php4php521keymagic_quotes_gpc" title="Permanent link">&para;</a></h2>
+<h2 id="sprintf">sprintf()格式化漏洞（可以吃掉转义后的单引号<a class="headerlink" href="#sprintf" title="Permanent link">&para;</a></h2>
+<p>printf（）和sprintf（）函数中可以通过使用%接一个字符来进行padding功能</p>
+<blockquote>
+<p>例如%10s 字符串会默认在左侧填充空格至长度为10，还可以 %010s 会使用字符0进行填充，但是如果我们想要使用别的字符进行填充，需要使用 ‘ 单引号进行标识，例如 %’#10s 这个就是使用#进行填充（百分号不仅会吃掉’单引号，还会吃掉 斜杠）</p>
+</blockquote>
+<p>同时sprintf（）可以使用指定参数位置的写法</p>
+<p><img alt="1566632984369" src="../assets/1566632984369.png" /></p>
+<blockquote>
+<p>%后面的数字代表第几个参数，$后代表格式化类型</p>
+</blockquote>
+<p>输入的特殊字符被放到引号中进行转义时，但是又使用了sprintf函数进行拼接时</p>
+<p>例如<code>%1$'%s'</code> 中的 <code>'%</code>被当成使用<code>%</code>进行padding，导致后一个<code>'</code>逃逸了</p>
+<p>还有一种情况就是<code>'</code>被转义成了<code>\'</code>,例如输入<code>%'and 1=1#</code>进入，存在SQL过滤，<code>'</code>被转成了<code>\'</code></p>
+<p>于是sql语句变成了 <code>select * from user where username = '%\' and 1=1#';</code></p>
+<p>如果这个语句被使用sprintf函数进行了拼接，<code>%</code>后的<code>\</code>被吃掉了，导致了<code>’</code>逃逸</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$sql</span> <span class="o">=</span> <span class="s2">&quot;select * from user where username = &#39;%\&#39; and 1=1#&#39;;&quot;</span><span class="p">;</span>
+<span class="nv">$args</span> <span class="o">=</span> <span class="s2">&quot;admin&quot;</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nb">sprintf</span><span class="p">(</span> <span class="nv">$sql</span><span class="p">,</span> <span class="nv">$args</span> <span class="p">)</span> <span class="p">;</span>
+<span class="c1">//result: select * from user where username = &#39;&#39; and 1=1#&#39;</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</td></tr></table>
+
+<p>不过这样容易遇到 <code>PHP Warning: sprintf(): Too few arguments</code>的报错</p>
+<p>这个时候我们可以使用<code>%1$</code>来吃掉转移添加的<code>\</code></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$sql</span> <span class="o">=</span> <span class="s2">&quot;select * from user where username = &#39;%1</span><span class="si">$\</span><span class="s2">&#39; and 1=1#&#39; and password=&#39;%s&#39;;&quot;</span><span class="p">;</span>
+<span class="nv">$args</span> <span class="o">=</span> <span class="s2">&quot;admin&quot;</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nb">sprintf</span><span class="p">(</span> <span class="nv">$sql</span><span class="p">,</span> <span class="nv">$args</span><span class="p">)</span> <span class="p">;</span>
+<span class="c1">//result: select * from user where username = &#39;&#39; and 1=1#&#39; and password=&#39;admin&#39;;</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="php-and">php中 = 赋值运算的优先级高于and<a class="headerlink" href="#php-and" title="Permanent link">&para;</a></h2>
+<p><code>$c = is_numeric($a) and is_numeric($b)</code> 程序本意是要a、b都为数字才会继续，但是当a为数字时，会先赋值给a为数字时，会先赋值给c，所以可能导致$b绕过检测</p>
+<h2 id="parse_urllibcurlurlssrf">parse_url与libcurl对与url的解析差异可能导致ssrf<a class="headerlink" href="#parse_urllibcurlurlssrf" title="Permanent link">&para;</a></h2>
+<ul>
+<li>当url中有多个@符号时，<strong>parse_url中获取的host是最后一个@符号后面的host，而libcurl则是获取的第一个@符号之后的。</strong>因此当代码对<code>http://user@eval.com:80@baidu.com</code> 进行解析时，PHP获取的host是baidu.com是允许访问的域名，而最后调用libcurl进行请求时则是请求的eval.com域名，可以造成ssrf绕过</li>
+<li>此外对于<code>https://evil@baidu.com</code>这样的域名进行解析时,php获取的host是<code>evil@baidu.com</code>，但是libcurl获取的host却是evil.com</li>
+</ul>
+<h2 id="urlfilter_varparse_urlssrf">url标准的灵活性导致绕过filter_var与parse_url进行ssrf<a class="headerlink" href="#urlfilter_varparse_urlssrf" title="Permanent link">&para;</a></h2>
+<p>filter_var()函数对于<code>http://evil.com;google.com</code> 会返回false也就是认为url格式错误，但是对于<code>0://evil.com:80;google.com:80/</code> 、<code>0://evil.com:80,google.com:80/</code>、<code>0://evil.com:80\google.com:80/</code>却返回true.</p>
+<h2 id="file_get_contentsxss">通过file_get_contents获取网页内容并返回到客户端有可能造成xss<a class="headerlink" href="#file_get_contentsxss" title="Permanent link">&para;</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="k">if</span><span class="p">(</span><span class="nb">filter_var</span><span class="p">(</span><span class="nv">$argv</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="nx">FILTER_VALIDATE_URL</span><span class="p">))</span> <span class="p">{</span>
+   <span class="c1">// parse URL</span>
+   <span class="nv">$r</span> <span class="o">=</span> <span class="nb">parse_url</span><span class="p">(</span><span class="nv">$argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+   <span class="nb">print_r</span><span class="p">(</span><span class="nv">$r</span><span class="p">);</span>
+   <span class="c1">// check if host ends with google.com</span>
+   <span class="k">if</span><span class="p">(</span><span class="nb">preg_match</span><span class="p">(</span><span class="s1">&#39;/baidu\.com$/&#39;</span><span class="p">,</span> <span class="nv">$r</span><span class="p">[</span><span class="s1">&#39;host&#39;</span><span class="p">]))</span> <span class="p">{</span>
+      <span class="c1">// get page from URL</span>
+      <span class="nv">$a</span> <span class="o">=</span> <span class="nb">file_get_contents</span><span class="p">(</span><span class="nv">$argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+      <span class="k">echo</span><span class="p">(</span><span class="nv">$a</span><span class="p">);</span>
+   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="k">echo</span> <span class="s2">&quot;Error: Host not allowed&quot;</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+   <span class="k">echo</span> <span class="s2">&quot;Error: Invalid URL&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
+<p>虽然通过filter_var函数对url的格式进行检查，并且使用正则对url的host进行限定</p>
+<p>但是可以通过<code>data://baidu.com/plain;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pgo=</code> 页面会将<code>&lt;script&gt;alert(1)&lt;/script&gt;</code>返回给客户端，就有可能造成xss</p>
+<h2 id="_2">弱类型<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>md5(‘240610708’); // 0e462097431906509019562988736854
+
+md5(‘QNKCDZO’); // 0e830400451993494058024219903391
+
+md5(‘240610708’) == md5(‘QNKCDZO’)
+
+md5(‘aabg7XSs’) == md5(‘aabC9RqS’)
+
+sha1(‘aaroZmOk’) == sha1(‘aaK1STfY’)
+
+sha1(‘aaO8zKZF’) == sha1(‘aa3OFF9m’)
+
+‘0010e2’ == ‘1e3’
+
+‘0x1234Ab’ == ‘1193131‘
+
+‘0xABCdef’ == ‘ 0xABCdef’
+</pre></div>
+</td></tr></table>
+
+<p>当转换为boolean时，以下只被认为是FALSE：FALSE、0、0.0、“”、“0”、array()、NULL</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PHP 7 以前的版本里，如果向八进制数传递了一个非法数字（即 8 或 9），则后面其余数字会被忽略。var_dump(0123)=var_dump(01239)=83
+
+PHP 7 以后，会产生 Parse Error。
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>字符串转换为数值时，若字符串开头有数字，则转为数字并省略后面的非数字字符。若一开头没有数字则转换为0
+
+\$foo = 1 + “bob-1.3e3”; // $foo is integer (1)
+
+\$foo = 1 + “bob3”; // $foo is integer (1)
+
+\$foo = 1 + “10 Small Pigs”; // $foo is integer (11)
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>‘’ == 0 == false
+
+‘123’ == 123
+
+‘abc’ == 0
+
+‘123a’ == 123
+
+‘0x01’ == 1
+
+‘0e123456789’ == ‘0e987654321’
+
+[false] == [0] == [NULL] == [‘’]
+
+NULL == false == 0» true == 1
+</pre></div>
+</td></tr></table>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../审计小知识/" title="审计小知识0" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  上一页
+                </span>
+                审计小知识0
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../审计小知识2/" title="审计小知识2" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  下一页
+                </span>
+                审计小知识2
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application.245445c6.js"></script>
+      
+        
+        
+          
+          <script src="../../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+                <script src="../../../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../../../assets/javascripts/lunr/lunr.ja.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
+      
+    
+  </body>
+</html>
